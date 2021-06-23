@@ -16,18 +16,22 @@ html{
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* custom scroll bar */
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 10px;
 }
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background: #888;
 }
 
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
@@ -127,12 +131,32 @@ section .title::after{
     margin-left: 25px;
     transition: color 0.3s ease;
 }
-.navbar .menu li a:hover{
-    color: var(--accent-color);;
-}
+
 .navbar.sticky .menu li a:hover{
     color: var(--primary-color);
 }
+
+.nav-link::before {
+    transition: 300ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+  }
+  
+  .nav-link-ltr::before {
+    width: 0%;
+    bottom: 30px;
+  }
+  
+  .nav-link-ltr:hover::before {
+    width: 30px;
+  }
+  
+  .navbar.sticky .nav-link-ltr::before {
+      bottom: 20px;
+  }
+  
 
 /* menu btn styling */
 .menu-btn{
@@ -183,8 +207,11 @@ section .title::after{
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
-  width: 100%;
+  max-width: 1300px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 .home .max-width .row{
   margin-right: 0;
@@ -193,12 +220,12 @@ section .title::after{
     font-size: 27px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
-    font-weight: 600;
-    margin-left: -3px;
+    font-size: 70px;
+    font-weight: 500;
+    margin-left: -1px;
 }
 .home .home-content .text-3{
-    font-size: 40px;
+    font-size: 35px;
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
@@ -220,6 +247,13 @@ section .title::after{
 .home .home-content a:hover{
     color: var(--accent-color);;
     background: none;
+}
+
+.home img {
+    width: 500px;
+    height: 500px;
+    margin-left: 100px;
+    /* background: ; */
 }
 
 /* about section styling */
@@ -321,7 +355,7 @@ section .title::after{
     width: calc(50% - 30px);
 }
 .skills .skills-content .left .text{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -459,6 +493,10 @@ section .title::after{
 .contact .title::after{
     content: "get in touch";
 }
+.contact .contact-content {
+    position: relative;
+}
+
 .contact .contact-content .column{
     width: calc(50% - 30px);
 }
@@ -466,6 +504,17 @@ section .title::after{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    position: relative;
+}
+.contact .contact-content .text::after{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--accent-color);
+    color: var(--accent-color);
+    width: 100%;
+    display: block;
 }
 .contact .contact-content .left p{
     text-align: justify;
@@ -574,11 +623,25 @@ footer span a:hover{
         height: 350px;
         width: 350px;
     }
+    .home img {
+        display: none;
+    }
 }
 
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
+    }
+    
+}
+
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+    .home img {
+        display: none;
     }
 }
 @media (max-width: 947px){
@@ -661,6 +724,14 @@ footer span a:hover{
     }
     .services .serv-content .card{
         width: 100%;
+        user-select: none;
+    }
+    .services .serv-content .card:hover{
+        background: #333;;
+    }
+
+    .about .about-content .right .text {
+        font-size: 20px;
     }
 }
 
