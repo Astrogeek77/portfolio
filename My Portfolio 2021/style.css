@@ -156,7 +156,35 @@ section .title::after{
   .navbar.sticky .nav-link-ltr::before {
       bottom: 20px;
   }
-  
+
+  .menu.active li {
+      position: relative;
+  }
+
+  .menu.active li a::before {
+    transition: 300ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: var(--accent-color);
+    width: 0%;
+    bottom: 10px;
+  }
+
+  .menu.active li a:hover {
+      color: var(--accent-color);
+  }
+
+  .menu.active li a:hover::before {
+      width: 40px;
+  }
+
+
+
+
+
+
+
 
 /* menu btn styling */
 .menu-btn{
@@ -207,11 +235,20 @@ section .title::after{
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
-  max-width: 1300px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+    max-width: 1300px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background:rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
 }
 .home .max-width .row{
   margin-right: 0;
@@ -228,6 +265,7 @@ section .title::after{
     font-size: 35px;
     margin: 5px 0;
 }
+
 .home .home-content .text-3 span{
     color: var(--accent-color);;
     font-weight: 500;
@@ -252,7 +290,7 @@ section .title::after{
 .home img {
     width: 500px;
     height: 500px;
-    margin-left: 100px;
+    margin-left: 80px;
     /* background: ; */
 }
 
@@ -452,7 +490,7 @@ section .title::after{
     transform: scale(1.05);
 }
 .teams .carousel .card .text{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
@@ -626,13 +664,14 @@ footer span a:hover{
     .home img {
         display: none;
     }
-}
 
-@media (max-width: 991px) {
-    .max-width{
-        padding: 0 50px;
+    .home .max-width{
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        width: auto;
     }
-    
 }
 
 
@@ -674,6 +713,7 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
+
     .home .home-content .text-2{
         font-size: 70px;
     }
