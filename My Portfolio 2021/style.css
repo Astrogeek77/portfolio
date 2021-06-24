@@ -116,6 +116,9 @@ section .title::after{
     font-size: 35px;
     font-weight: 600;
     user-select: none;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
 }
 .navbar .logo a span{
     color: var(--accent-color);;
@@ -135,6 +138,7 @@ section .title::after{
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 .navbar.sticky .menu li a:hover{
@@ -171,13 +175,9 @@ section .title::after{
     height: 2px;
     content: "";
     position: absolute;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     width: 0%;
     bottom: 10px;
-  }
-
-  .menu.active li a:hover {
-      color: var(--accent-color);
   }
 
   .menu.active li a:hover::before {
@@ -243,10 +243,11 @@ section .title::after{
     max-width: 1300px;
     width: 90vw;
     display: flex;
-    justify-content: space-between;
+    padding: 30px;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    background:rgba(255, 255, 255, 0.1);
+    background:rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -258,6 +259,14 @@ section .title::after{
 .home .max-width .row{
   margin-right: 0;
 }
+
+.home .home-content .text-1, .home .home-content .text-2, .home .home-content .text-3 {
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1);
+    user-select: none;
+}
+
 .home .home-content .text-1{
     font-size: 27px;
 }
@@ -265,7 +274,9 @@ section .title::after{
     font-size: 70px;
     font-weight: 500;
     margin-left: -1px;
+    
 }
+
 .home .home-content .text-3{
     font-size: 35px;
     margin: 5px 0;
@@ -293,15 +304,15 @@ section .title::after{
 }
 
 .home img {
-    width: 500px;
-    height: 500px;
-    margin-left: 80px;
+    width: 400px;
+    height: 400px;
+    margin-left: 50px;
     /* background: ; */
 }
 
 /* about section styling */
 .about .title::after{
-    content: "who i am";
+    content: "who am i";
 }
 .about .about-content .left{
     width: 45%;
