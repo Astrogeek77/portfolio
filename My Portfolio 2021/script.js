@@ -76,8 +76,13 @@ $(document).ready(function(){
 AOS.init({
     offset: 200,
     delay: 200,
-    duration: 1000,
+    duration: 1200,
     once: false,
-    easing: 'ease',
-    
+    easing: 'ease-in-out',
 })
+
+AOS.refresh();
+AOS.refreshHard();
+
+
+
