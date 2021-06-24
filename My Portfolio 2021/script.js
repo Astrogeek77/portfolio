@@ -77,8 +77,9 @@ AOS.init({
     offset: 200,
     delay: 200,
     duration: 1200,
-    once: false,
+    once: true,
     easing: 'ease-in-out',
+    disable: 'phone',
 })
 
 AOS.refresh();
