@@ -74,7 +74,10 @@ $(document).ready(function(){
 // AOS Library
 
 AOS.init({
+    offset: 200,
     delay: 200,
-    duration: 1200,
+    duration: 1000,
     once: false,
+    easing: 'ease',
+    
 })
