@@ -230,7 +230,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner-2.png") no-repeat center;
+    background: url("images/banner-5.jpg") no-repeat center;
     /* background-position-x: 90%;     */
     height: 100vh;
     color: var(--primary-color);
@@ -247,7 +247,7 @@ section .title::after{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    background:rgba(255, 255, 255, 0.3);
+    background:rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.25);
