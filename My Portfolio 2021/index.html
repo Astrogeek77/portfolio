@@ -255,20 +255,20 @@
                 </div>
                 <div class="column right" data-aos="fade-left" data-aos-easing="ease-in-sine">
                     <div class="text">Message me</div>
-                    <form class="contact-form" action="#" method="POST">
+                    <form autocomplete="off" name="formu1" class="contact-form" action="https://getform.io/f/f21fc009-6725-47bd-ae9e-9b34eb846e26" method="POST">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" class="fullname" placeholder="Name">
+                                <input type="text" class="fullname" placeholder="Name" name="Fullname" required>
                             </div>
                             <div class="field email">
-                                <input type="text" class="email-input" placeholder="Email">
+                                <input type="text" class="email-input" placeholder="Email" name="Email">
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" class="subject" placeholder="Subject">
+                            <input type="text" class="subject" placeholder="Subject" name="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea class="message" cols="30" rows="10" placeholder="Message.."></textarea>
+                            <textarea class="message" cols="30" rows="10" placeholder="Message.." name="Message" required></textarea>
                         </div>
                         <div class="button-area">
                             <button class="send-msg" type="submit" name="send">Send message <i class="fas fa-chevron-circle-right"></i></button>
